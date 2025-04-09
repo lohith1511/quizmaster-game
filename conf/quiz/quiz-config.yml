@@ -1,118 +1,49 @@
-# This is a demo quiz config.
-# This file contains all fields that you might want to update when creating your own quiz.
+title: Open Source Software Quiz
 
-title: Demo quiz
-image: https://upload.wikimedia.org/wikipedia/commons/thumb/d/da/OOUI_Talk_icon_-_Question_2.svg/1024px-OOUI_Talk_icon_-_Question_2.svg.png # optional
-author: Jens Nyman # Change this to your name
-instructionsOnFirstSlide: Please, don't look up the answers online
-masterSecret: quiz # Remove this line to allow anyone to access the master controls
-language: en # This is the default. The other supported languages can be found in application.conf
-
-usageStatistics:
-    # Set this to true if you're OK with sending anonymous usage statistics to the developer.
-    #
-    # The developer politely asks you to keep this so that they get a sense of how much this is
-    # used.
-    #
-    # Unless you explicitly allow it below, the data sent to the developer will never contain
-    # anything that identifies you personally. For example: It'll contain the version, the language,
-    # and the number of players.
-    sendAnonymousUsageDataAtEndOfQuiz: true
-
-    # Uncomment these lines if you're fine with sending extra data to the developer of Quizmaster.
-    #includeAuthor: true
-    #includeQuizTitle: true
-
-# Optional - Define custom defaults
 defaults:
-  maxTimeSeconds: 120
+  maxTimeSeconds: 60
   pointsToGain: 1
-  multipleAnswers_pointsToGainPerAnswer: 1
-  multipleQuestions_pointsToGainPerQuestion: 1
-  orderItems_pointsToGainInTotal: 2
 
 rounds:
-  - name: Geography
-    image: https://freesvg.org/img/globe-310324.png # optional
+  - name: Open Source Basics
     questions:
-      # Standard textual question
-      - question: Who was the country Colombia named after?
-        answer: Christoffer Columbus
+      - question: What does the term "open source" mean?
+        choices: [Freely available code, Free to use, Requires a license fee, Only for Linux]
+        answer: Freely available code
 
-      # Standard multiple-choice question
-      - question: What is the capital of Belgium?
-        choices: [Paris, London, Brussels, Berlin]
-        answer: Brussels
-        pointsToGain: 1
-        pointsToGainOnFirstAnswer: 2 # Double points for first right answer
+      - question: Which of the following is an open source operating system?
+        choices: [Windows, macOS, Ubuntu, iOS]
+        answer: Ubuntu
 
-      # Multiple-choice question - only the first right answer gets points
-      - question: What is the capital of France?
-        choices: [Paris, London, Brussels, Berlin]
-        answer: Paris
-        image: https://raw.githubusercontent.com/nymanjens/quizmaster/master/conf/quiz/assets/geography/france.png
-        answerImage: geography/france-answer.png
-        # You can also use answerAudio: and answerVideo:, which are similar to audio: and video:.
-        answerDetail: |
-          Image released under Creative Commons by Destination2
-          (www.destination2.co.uk)
-        pointsToGain: 0 # This question won't give any points
-        maxTimeSeconds: 120
+      - question: What license is commonly used in open source projects?
+        choices: [GPL, EULA, NDA, TOS]
+        answer: GPL
 
-      # Question to be answered verbally (with video) - only the first right answer gets points,
-      # players can stop the timer to attempt an answer
-      - question: What city does this video from 1935 show?
-        answer: Guatemala City
-        video: geography/about_bananas.mp4
-        onlyFirstGainsPoints: true # See who can answer this question first
-        showSingleAnswerButtonToTeams: true # Show a button to stop the timer. Answers can then be
-                                            # given verbally.
-
-      # Special question type: Put items in the correct order
-      - questionType: orderItems
-        question: Order these cities from small to large
-        questionDetail: Population according to Google on July 2020
-        masterNotes: Mention that this is not a trick question
-        image: {src: geography/globe.png, size: small} 
-        orderedItemsThatWillBePresentedInAlphabeticalOrder:
-         - {item: Riga, answerDetail: ~600k}
-         - {item: Stockholm, answerDetail: ~1M}
-         - {item: Berlin, answerDetail: ~4M}
-         - {item: London, answerDetail: ~9M}
-        pointsToGain: 3
-
-
-  - name: Music round
-    image: https://upload.wikimedia.org/wikipedia/commons/f/f6/Music_1_-_The_Noun_Project.svg # optional
+  - name: Famous Open Source Projects
     questions:
-      # Standard textual question with audio
-      - question: After which season is this track named?
-        questionDetail: (Royalty Free Music from Bensound)
-        answer: Summer
-        answerDetail: (By Bensound)
-        audio: https://www.bensound.com/bensound-music/bensound-summer.mp3
+      - question: Who founded the Free Software Foundation (FSF)?
+        choices: [Bill Gates, Steve Jobs, Linus Torvalds, Richard Stallman]
+        answer: Richard Stallman
 
-      # Special question type: Provide multiple answers
-      - questionType: multipleAnswers
-        question: List the band members of Metallica
-        questionDetail: (in 2021)
-        answers:
-          - {answer: James Hetfield, answerDetail: Lead vocalist}
-          - Lars Ulrich
-          - Kirk Hammett
-          - Robert Trujillo
-        answersHaveToBeInSameOrder: false
-        image: https://upload.wikimedia.org/wikipedia/commons/9/9e/Metallica_-_2003.jpg
-        pointsToGainPerAnswer: 1
+      - question: What is Git primarily used for?
+        choices: [Designing websites, Writing documents, Source code version control, Compiling programs]
+        answer: Source code version control
 
-      # Special question type: Ask multiple questions
-      - questionType: multipleQuestions
-        questionTitle: Can you recognize the song from the lyrics?
-        questionDetail: |
-          With the lights out, it's less dangerous
-          Here we are now, entertain us
-        questions:
-          - {question: "What is the song title?", answer: "Smells Like Teen Spirit", answerDetail: 1991}
-          - {question: "Which artist?", answer: Nirvana}
-          - {question: "What year was the song released?", answer: 1991, pointsToGain: 2}
-        image: https://cdn.pixabay.com/photo/2016/01/12/17/20/sheet-music-1136234_960_720.png
+      - question: Which company owns GitHub?
+        choices: [Google, Microsoft, IBM, Red Hat]
+        answer: Microsoft
+
+  - name: OSE Fun
+    questions:
+      - question: Where is KL University located?
+        choices: [Hyderabad, Vijayawada, Chennai, Bengaluru]
+        answer: Vijayawada
+
+      - question: How much would you rate the class of OSE?
+        choices: [1, 2, 3, 4, 5]
+        answer: 5
+
+      - question: How much are you interested in attending the morning OSE class?
+        choices: [excited, too much, boring, interested]
+        answer: excited
+
