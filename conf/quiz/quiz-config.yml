@@ -3,6 +3,10 @@ title: Open Source Software Quiz
 defaults:
   maxTimeSeconds: 60
   pointsToGain: 1
+ teams:
+  - name: Master
+    password: lohith123
+    isMaster: true
 
 rounds:
   - name: Open Source Basics
