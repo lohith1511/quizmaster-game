@@ -51,8 +51,8 @@ docker-compose --file=docker-compose-build-locally.yml up
   Configure your quiz here (questions, choices, answers, images, ...). The existing one in the
   release is a demo config that contains most of the options.
 
-  ## After saving the file
-  - This way, users can force Docker to recreate containers using the --force-recreate option.
+## After saving the file
+- This way, users can force Docker to recreate containers using the --force-recreate option.
 ```
 sudo docker-compose -f docker-compose-prebuilt.yml up --force-recreate
 ```
